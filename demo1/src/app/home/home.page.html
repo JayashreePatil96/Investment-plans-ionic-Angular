@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-card-header id="n">
+      Returns Calculator
+    </ion-card-header>
+ </ion-header>
+ 
+<ion-content >
+  <div  style="background-color: rgb(204, 161, 200);  width: 1200px;  margin-left: 10px;">
+  <ion-radio-group id="x" [(ngModel)]="invest" >
+    <ion-item>
+      <ion-label>Investment option 1 (12% per anum)</ion-label>
+      <ion-radio value="12" id="z"  (click)="itemSelected(12,'plan1')"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Investment option 2 (18% per anum)</ion-label>
+      <ion-radio value="18" id="b"  (click)="itemSelected(18,'plan2')"  ></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Investment option 3 (8% per anum)</ion-label>
+      <ion-radio value="8" id="c"   (click)="itemSelected(8,'plan3')"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  </div>
+
+  <div *ngIf="invest" >
+   <app-test [perc]=perct [plan]=plans></app-test>
+ </div>
+
+</ion-content>
